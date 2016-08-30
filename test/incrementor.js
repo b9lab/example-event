@@ -24,7 +24,7 @@ contract('Incrementor', function(accounts) {
     var incrementor = Incrementor.deployed();
     return getEventsPromise(incrementor.LogValue(
         {},
-        { fromBlock: 0, toBlock: "latest", address: incrementor.address }))
+        { fromBlock: 0, toBlock: "latest" }))
       .then(function (events) {
         assert.equal(events.length, 1, "should have received 1 event");
         assert.equal(events[0].args.value.valueOf(), 0, "should be 0 from constructor");
@@ -40,7 +40,7 @@ contract('Incrementor', function(accounts) {
       .then(function (tx) {
         return getEventsPromise(incrementor.LogValue(
           {},
-          { fromBlock: blockNumber + 1, toBlock: "latest", address: incrementor.address }));
+          { fromBlock: blockNumber + 1, toBlock: "latest" }));
       })
       .then(function (events) {
         assert.equal(events.length, 1, "should have received 1 event");
@@ -60,7 +60,7 @@ contract('Incrementor', function(accounts) {
       .then(function (tx) {
         return getEventsPromise(incrementor.LogValue(
             {},
-            { fromBlock: blockNumber + 1, toBlock: "latest", address: incrementor.address }),
+            { fromBlock: blockNumber + 1, toBlock: "latest" }),
           2);
       })
       .then(function (events) {
@@ -76,7 +76,7 @@ contract('Incrementor', function(accounts) {
     var incrementor = Incrementor.deployed();
     return getEventsPromise(incrementor.LogValue(
           {},
-          { fromBlock: 0, toBlock: "latest", address: incrementor.address }),
+          { fromBlock: 0, toBlock: "latest" }),
         4)
       .then(function (events) {
         assert.equal(events.length, 4, "should have received all 4 events");
