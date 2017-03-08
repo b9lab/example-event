@@ -1,3 +1,5 @@
+pragma solidity ^0.4.6;
+
 contract Owned {
 	address public owner;
 
@@ -10,7 +12,7 @@ contract Owned {
 
 	modifier fromOwner {
 		if (msg.sender != owner) throw;
-		_
+		_;
 	}
 
 	function setOwner(address newOwner) fromOwner {
