@@ -1,0 +1,28 @@
+{
+  "name": "example_event",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b9lab/example-event.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b9lab/example-event/issues"
+  },
+  "homepage": "https://github.com/b9lab/example-event#readme",
+  "devDependencies": {
+    "truffle": "^3.4.11"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1"
+  }
+}
