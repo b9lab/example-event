@@ -77,6 +77,7 @@ contract('Fool', function(accounts) {
                 // Only 1 formatted event
                 assert.strictEqual(txObject.logs.length, 1);
                 assert.strictEqual(txObject.logs[0].event, "LogFooled");
+                assert.strictEqual(txObject.logs[0].address, fool.address);
                 assert.strictEqual(txObject.logs[0].args.fool, owner);
                 assert.strictEqual(txObject.logs[0].args.sink, sink.address);
                 assert.strictEqual(txObject.logs[0].args.amount.toNumber(), 2);
@@ -85,6 +86,7 @@ contract('Fool', function(accounts) {
                 assert.strictEqual(txObject.receipt.logs.length, 2);
 
                 // First one is from Fool
+                assert.strictEqual(txObject.receipt.logs[0].address, fool.address);
                 assert.strictEqual(txObject.receipt.logs[0].topics.length, 3);
                 assert.strictEqual(
                     txObject.receipt.logs[0].topics[0],
@@ -101,6 +103,7 @@ contract('Fool', function(accounts) {
 
 
                 // Second one is from Sink
+                assert.strictEqual(txObject.receipt.logs[1].address, sink.address);
                 assert.strictEqual(txObject.receipt.logs[1].topics.length, 2);
                 assert.strictEqual(
                     txObject.receipt.logs[1].topics[0],
